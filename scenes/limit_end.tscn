@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://7p8qtddjwcft"]
+
+[ext_resource type="Texture2D" uid="uid://bpk442jaehl1l" path="res://Art Assets/Characters/Duck Girl/limite.png" id="1_sca6a"]
+[ext_resource type="Script" path="res://scenes/limit_end.gd" id="1_xvxb4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pndcc"]
+size = Vector2(7, 384)
+
+[node name="limitEnd" type="Area2D"]
+script = ExtResource("1_xvxb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(532.5, 289)
+shape = SubResource("RectangleShape2D_pndcc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(530, 290)
+texture = ExtResource("1_sca6a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
